@@ -1,1 +1,117 @@
-/* Start coding here */
+/* 🛠️ Reset ขอบจอพื้นฐาน */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+  
+  body {
+    background-color: #ffffff;
+    min-height: 100vh;
+  }
+  
+  .chatroom-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* 🔲 โครงสร้าง Header ด้านบน */
+  .chatroom-header {
+    background-color: #7f7f7f;
+    padding: 14px 24px;
+    width: 100%;
+  }
+  
+  .chatroom-header h2 {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 400;
+  }
+  
+  /* 📜 โครงสร้างพื้นที่แชท */
+  .chat-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  /* จัดแนวแถวแชท (ซ้าย-ขวา) */
+  .chat-row {
+    display: flex;
+    width: 100%;
+  }
+  
+  .row-right {
+    justify-content: flex-end; /* ดันชิดขวา */
+  }
+  
+  .row-left {
+    justify-content: flex-start; /* ดันชิดซ้าย */
+  }
+  
+  /* 🧼 สไตล์หลักของกล่องข้อความแชททุกใบ */
+  .bubble {
+    padding: 12px 28px;
+    border-radius: 20px;
+    font-size: 16px;
+    max-width: 60%;
+    position: relative; /* เพื่อให้ธาตุภายในเกาะตำแหน่งได้แม่นยำ */
+  }
+  
+  /* 🟢 กล่องข้อความสีเขียวสด */
+  .bubble-green {
+    background-color: #00cc00;
+    color: #000000;
+  }
+  
+  /* ทำหางแหลมยื่นออกจากกล่องแชทสีเขียว */
+  .bubble-tail::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    right: -8px;
+    width: 0;
+    height: 0;
+    border-left: 14px solid #00cc00;
+    border-bottom: 14px solid transparent;
+  }
+  
+  /* 🔘 กล่องข้อความฝั่งซ้าย (สีเทาเข้ม) */
+  .bubble-dark-gray {
+    background-color: #7f7f7f;
+    color: #ffffff;
+    min-width: 160px;
+  }
+  
+  /* ⚪ กล่องข้อความสีเทาอ่อน (บรรทัด Coding) */
+  .bubble-light-gray {
+    background-color: #e6e6e6;
+    color: #000000;
+    padding-right: 45px; /* เว้นที่ว่างกันตัวหนังสือทับปุ่ม x */
+  }
+  
+  /* ❌ จัดตำแหน่งปุ่ม "x" ให้ซ้อนทับอยู่มุมขวาของกล่องสีเทาอ่อน */
+  .close-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 8px;
+    background-color: #b3b3b3;
+    color: #ffffff;
+    border: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-size: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .close-btn:hover {
+    background-color: #999999;
+  }
