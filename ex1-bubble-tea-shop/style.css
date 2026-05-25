@@ -1,5 +1,151 @@
-body {
-  font-family: "Kanit";
+/* 🛠️ Reset & Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* Start coding here */
+body {
+  background-color: #2e2e2e; /* สีพื้นหลังเว็บด้านนอกเพื่อให้ตัวการ์ดสีขาวโดดเด่น */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* 🧋 Main Shop Card */
+.shop-card {
+  background-color: #ffffff;
+  max-width: 500px;
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden; /* บังคับให้รูปภาพมุมบนโค้งมนตามขอบกล่อง */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* 📸 Image Header Frame (ใช้คุมตำแหน่งธาตุข้างใน) */
+.image-header {
+  position: relative;
+  height: 250px;
+  width: 100%;
+}
+
+.bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* บังคับรูปไม่ให้เบี้ยวสัดส่วน */
+}
+
+/* 🖤 Gradient Overlay ด้านล่างรูปภาพ */
+.gradient-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%; /* ให้เริ่มไล่จากครึ่งล่างของรูปลงมา */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 16px 24px;
+}
+
+.overlay-title {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* 📌 ป้ายแท็ก "ปากน้ำ" (Fixed Position สัมพัทธ์กับกล่องแม่) */
+.location-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  padding: 6px 16px;
+  border-radius: 4px;
+  font-size: 14px;
+  backdrop-filter: blur(4px); /* เพิ่มเอฟเฟกต์กระจกฝ้าให้ป้าย */
+}
+
+/* 📝 Content Body */
+.card-content {
+  padding: 24px;
+}
+
+.main-title {
+  color: #1f2937;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  color: #4b5563;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+/* 🍡 Menu Items Grid Layout */
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* แบ่งครึ่งฝั่งละเท่า ๆ กัน */
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.menu-icon {
+  font-size: 24px;
+  background-color: #f3f4f6;
+  padding: 8px;
+  border-radius: 12px;
+}
+
+.menu-item h4 {
+  color: #111827;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.menu-item p {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+/* 📃 Information Elements */
+.description {
+  color: #374151;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.divider {
+  border: 0;
+  border-top: 1px solid #e5e7eb;
+  margin-bottom: 16px;
+}
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.info-section p {
+  color: #4b5563;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.info-section strong {
+  color: #111827;
+}
